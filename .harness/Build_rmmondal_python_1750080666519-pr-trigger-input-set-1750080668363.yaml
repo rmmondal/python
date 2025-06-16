@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_rmmondal_python_1750080666519-pr-trigger-input-set
+  identifier: Build_rmmondal_python_1750080666519prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: stdemoproject
+  pipeline:
+    identifier: Build_rmmondal_python_1750080666519
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
