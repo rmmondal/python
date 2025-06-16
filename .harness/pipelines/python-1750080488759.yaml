@@ -29,7 +29,7 @@ pipeline:
                       echo "Welcome to Harness CI"
                       python -m pip install --upgrade pip
                       pip install  pytest
-                      if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+                      if [ -f requirements.txt ]; then pip install --ignore-installed --no-deps -r requirements.txt; fi
               - step:
                   identifier: runlinter
                   name: run linter
