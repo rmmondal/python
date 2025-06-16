@@ -61,6 +61,7 @@ pipeline:
                       - latest
                   timeout: ""
                   type: BuildAndPushDockerRegistry
+                  context: ./
           platform:
             arch: Amd64
             os: Linux
