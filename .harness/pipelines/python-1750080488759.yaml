@@ -6,9 +6,10 @@ pipeline:
   properties:
     ci:
       codebase:
-        build: <+input>
         connectorRef: account.Github_OAuth_1750080462876
         repoName: rmmondal/python
+        build: <+input>
+        sparseCheckout: []
   stages:
     - stage:
         identifier: build
@@ -54,18 +55,18 @@ pipeline:
                   identifier: dockerbuild
                   name: docker_build
                   spec:
-                    caching: true
                     connectorRef: <+input>
-                    repo: hello/world
+                    repo: <+input>
                     tags:
                       - latest
+                    caching: true
                   timeout: ""
                   type: BuildAndPushDockerRegistry
                   context: ./
           platform:
-            arch: Amd64
             os: Linux
+            arch: Amd64
           runtime:
-            spec: {}
             type: Cloud
+            spec: {}
         type: CI
